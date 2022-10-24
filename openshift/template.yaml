@@ -71,7 +71,7 @@ objects:
     labels:
       app.kubernetes.io/name: pyrra-api
     name: pyrra-api
-    namespace: app-sre-observability-stage
+    # namespace: openshift-monitoring
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -140,7 +140,7 @@ objects:
 - apiVersion: v1
   metadata:
     name: pyrra-kubernetes
-    namespace: app-sre-observability-stage
+    # namespace: openshift-monitoring
     labels:
       app.kubernetes.io/name: pyrra-kubernetes
   spec:
@@ -155,7 +155,7 @@ objects:
 - apiVersion: apps/v1
   metadata:
     name: pyrra-kubernetes
-    namespace: app-sre-observability-stage
+    # namespace: openshift-monitoring
     labels:
       app.kubernetes.io/name: pyrra-kubernetes
   spec:
@@ -185,16 +185,16 @@ objects:
 - apiVersion: v1
   metadata:
     name: pyrra-kubernetes
-    namespace: app-sre-observability-stage
+    # namespace: openshift-monitoring
   kind: ServiceAccount
 - apiVersion: rbac.authorization.k8s.io/v1
   metadata:
     name: pyrra-kubernetes
-    namespace: app-sre-observability-stage
+    # namespace: openshift-monitoring
   subjects:
   - kind: ServiceAccount
     name: pyrra-kubernetes
-    namespace: app-sre-observability-stage
+    # namespace: openshift-monitoring
   roleRef:
     apiGroup: rbac.authorization.k8s.io
     kind: ClusterRole
@@ -211,7 +211,7 @@ objects:
   subjects:
     - kind: ServiceAccount
       name: pyrra-kubernetes
-      namespace: app-sre-observability-stage
+      # namespace: openshift-monitoring
 parameters:
 - name: IMAGE
   value: ghcr.io/pyrra-dev/pyrra
