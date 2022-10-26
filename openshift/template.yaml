@@ -89,6 +89,7 @@ objects:
         labels:
           app.kubernetes.io/name: pyrra-api
       spec:
+        serviceAccountName: pyrra-kubernetes
         containers:
           - args:
               - api
