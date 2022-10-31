@@ -365,6 +365,19 @@ objects:
       plural: ""
     conditions: []
     storedVersions: []
+- apiVersion: v1
+  metadata:
+    name: pyrra-api
+    namespace: pyrra
+    labels:
+      app.kubernetes.io/name: pyrra-api
+  spec:
+    ports:
+    - name: http
+      port: 9099
+    selector:
+      app.kubernetes.io/name: pyrra-api
+  kind: Service
 parameters:
 - name: IMAGE
   value: ghcr.io/pyrra-dev/pyrra
