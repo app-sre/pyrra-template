@@ -72,6 +72,7 @@ objects:
       app.kubernetes.io/name: pyrra-api
     name: pyrra-api
     namespace: pyrra
+    # namespace: openshift-monitoring
   spec:
     progressDeadlineSeconds: 600
     replicas: 1
@@ -92,8 +93,10 @@ objects:
         containers:
           - args:
               - api
-              - --prometheus-url=https://prometheus-k8s.openshift-monitoring.svc.cluster.local:9091
-              - --api-url=http://pyrra-kubernetes.openshift-monitoring.svc.cluster.local:9444
+              # - --prometheus-url=https://prometheus-k8s.openshift-monitoring.svc.cluster.local:9091
+              - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
+              # - --api-url=http://pyrra-kubernetes.openshift-monitoring.svc.cluster.local:9444
+              - --api-url=http://pyrra-api-pyrra.apps.app-sre-stage-0.k3s7.p1.openshiftapps.com
               - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
             image: ${IMAGE}:${RELEASE}
             imagePullPolicy: IfNotPresent
@@ -141,6 +144,7 @@ objects:
   metadata:
     name: pyrra-kubernetes
     namespace: pyrra
+    # namespace: openshift-monitoring
     labels:
       app.kubernetes.io/name: pyrra-kubernetes
   spec:
@@ -186,15 +190,18 @@ objects:
   metadata:
     name: pyrra-kubernetes
     namespace: pyrra
+    # namespace: openshift-monitoring
   kind: ServiceAccount
 - apiVersion: rbac.authorization.k8s.io/v1
   metadata:
     name: pyrra-kubernetes
     namespace: pyrra
+    # namespace: openshift-monitoring
   subjects:
   - kind: ServiceAccount
     name: pyrra-kubernetes
     namespace: pyrra
+    # namespace: openshift-monitoring
   roleRef:
     apiGroup: rbac.authorization.k8s.io
     kind: ClusterRole
@@ -212,6 +219,7 @@ objects:
     - kind: ServiceAccount
       name: pyrra-kubernetes
       namespace: pyrra
+      # namespace: openshift-monitoring
 - apiVersion: apiextensions.k8s.io/v1
   kind: CustomResourceDefinition
   metadata:
@@ -369,6 +377,7 @@ objects:
   metadata:
     name: pyrra-api
     namespace: pyrra
+    # namespace: openshift-monitoring
     labels:
       app.kubernetes.io/name: pyrra-api
   spec:
