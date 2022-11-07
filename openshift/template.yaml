@@ -175,7 +175,9 @@ objects:
         serviceAccountName: pyrra-kubernetes
         containers:
         - args:
-          - kubernetes
+          # - kubernetes
+          - filesystem
+          - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
           image: ${IMAGE}:${RELEASE}
           name: pyrra-kubernetes
           resources:
