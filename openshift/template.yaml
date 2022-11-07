@@ -176,7 +176,6 @@ objects:
         containers:
         - args:
           - kubernetes
-          - --config-map-mode=true
           image: ${IMAGE}:${RELEASE}
           name: pyrra-kubernetes
           resources:
