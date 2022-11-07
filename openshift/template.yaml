@@ -92,7 +92,7 @@ objects:
       spec:
         containers:
           - args:
-              - api
+              - --api=https://prometheus.app-sre-stage-01.devshift.net
               # - --prometheus-url=https://prometheus-k8s.openshift-monitoring.svc.cluster.local:9091
               - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
               # - --api-url=http://pyrra-kubernetes.openshift-monitoring.svc.cluster.local:9444
