@@ -210,7 +210,7 @@ objects:
         # - name: prometheus-pyrra
         #   persistentVolumeClaim:
         #     claimName: prometheus-pyrra
-  status: {}
+  # status: {}
 # - apiVersion: extensions/v1beta1
 #   kind: NetworkPolicy
 #   metadata:
