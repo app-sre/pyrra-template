@@ -199,17 +199,17 @@ objects:
           volumeMounts:
           - mountPath: /etc/pyrra
             name: pyrra-filesystem-claim0
-#           - mountPath: /etc/prometheus/pyrra
-#             name: prometheus-pyrra
+          - mountPath: /etc/prometheus/pyrra
+            name: prometheus-pyrra
         restartPolicy: Always
         serviceAccountName: pyrra-kubernetes
         volumes:
         - name: pyrra-filesystem-claim0
           persistentVolumeClaim:
             claimName: pyrra-filesystem-claim0
-        # - name: prometheus-pyrra
-        #   persistentVolumeClaim:
-        #     claimName: prometheus-pyrra
+        - name: prometheus-pyrra
+          persistentVolumeClaim:
+            claimName: prometheus-pyrra
   status: {}
 # - apiVersion: extensions/v1beta1
 #   kind: NetworkPolicy
