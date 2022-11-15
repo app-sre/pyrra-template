@@ -142,32 +142,32 @@ objects:
             name: trusted-ca
 
 
-- apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    namespace: pyrra
-    creationTimestamp: null
-    name: prometheus-pyrra
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 100Mi
-  status: {}
-- apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    namespace: pyrra
-    creationTimestamp: null
-    name: pyrra-filesystem-claim0
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 100Mi
-  status: {}
+# - apiVersion: v1
+#   kind: PersistentVolumeClaim
+#   metadata:
+#     namespace: pyrra
+#     creationTimestamp: null
+#     name: prometheus-pyrra
+#   spec:
+#     accessModes:
+#     - ReadWriteOnce
+#     resources:
+#       requests:
+#         storage: 100Mi
+#   status: {}
+# - apiVersion: v1
+#   kind: PersistentVolumeClaim
+#   metadata:
+#     namespace: pyrra
+#     creationTimestamp: null
+#     name: pyrra-filesystem-claim0
+#   spec:
+#     accessModes:
+#     - ReadWriteOnce
+#     resources:
+#       requests:
+#         storage: 100Mi
+#   status: {}
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
@@ -203,13 +203,13 @@ objects:
             name: prometheus-pyrra
         restartPolicy: Always
         serviceAccountName: pyrra-kubernetes
-        volumes:
-        - name: pyrra-filesystem-claim0
-          persistentVolumeClaim:
-            claimName: pyrra-filesystem-claim0
-        - name: prometheus-pyrra
-          persistentVolumeClaim:
-            claimName: prometheus-pyrra
+        # volumes:
+        # - name: pyrra-filesystem-claim0
+        #   persistentVolumeClaim:
+        #     claimName: pyrra-filesystem-claim0
+        # - name: prometheus-pyrra
+        #   persistentVolumeClaim:
+        #     claimName: prometheus-pyrra
   status: {}
 # - apiVersion: extensions/v1beta1
 #   kind: NetworkPolicy
