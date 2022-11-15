@@ -145,6 +145,7 @@ objects:
 - apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
+    namespace: pyrra
     creationTimestamp: null
     name: prometheus-pyrra
   spec:
@@ -157,6 +158,7 @@ objects:
 - apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
+    namespace: pyrra
     creationTimestamp: null
     name: pyrra-filesystem-claim0
   spec:
@@ -169,6 +171,7 @@ objects:
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
+    namespace: pyrra
     creationTimestamp: null
     labels:
       io.kompose.service: pyrra-filesystem
@@ -215,6 +218,7 @@ objects:
   metadata:
     creationTimestamp: null
     name: pyrra
+    namespace: pyrra
   spec:
     ingress:
     - from:
