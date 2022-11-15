@@ -142,19 +142,19 @@ objects:
             name: trusted-ca
 
 
-# - apiVersion: v1
-#   kind: PersistentVolumeClaim
-#   metadata:
-#     namespace: pyrra
-#     creationTimestamp: null
-#     name: prometheus-pyrra
-#   spec:
-#     accessModes:
-#     - ReadWriteOnce
-#     resources:
-#       requests:
-#         storage: 100Mi
-#   status: {}
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    namespace: pyrra
+    creationTimestamp: null
+    name: prometheus-pyrra
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 100Mi
+  status: {}
 - apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
