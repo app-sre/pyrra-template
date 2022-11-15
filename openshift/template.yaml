@@ -155,19 +155,19 @@ objects:
 #       requests:
 #         storage: 100Mi
 #   status: {}
-# - apiVersion: v1
-#   kind: PersistentVolumeClaim
-#   metadata:
-#     namespace: pyrra
-#     creationTimestamp: null
-#     name: pyrra-filesystem-claim0
-#   spec:
-#     accessModes:
-#     - ReadWriteOnce
-#     resources:
-#       requests:
-#         storage: 100Mi
-#   status: {}
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    namespace: pyrra
+    creationTimestamp: null
+    name: pyrra-filesystem-claim0
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 100Mi
+  status: {}
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
@@ -196,9 +196,9 @@ objects:
           imagePullPolicy: IfNotPresent
           name: pyrra-filesystem
           resources: {}
-#           volumeMounts:
-#           - mountPath: /etc/pyrra
-#             name: pyrra-filesystem-claim0
+          volumeMounts:
+          - mountPath: /etc/pyrra
+            name: pyrra-filesystem-claim0
 #           - mountPath: /etc/prometheus/pyrra
 #             name: prometheus-pyrra
         restartPolicy: Always
