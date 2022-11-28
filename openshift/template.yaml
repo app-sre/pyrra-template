@@ -279,13 +279,13 @@ objects:
               memory: 20Mi
   kind: Deployment
 
-# - apiVersion: v1
-#   metadata:
-#     name: pyrra-kubernetes
-#     namespace: pyrra
-#     # namespace: openshift-customer-monitoring
-#     # namespace: openshift-monitoring
-#   kind: ServiceAccount
+- apiVersion: v1
+  metadata:
+    name: pyrra-kubernetes
+    namespace: pyrra
+    # namespace: openshift-customer-monitoring
+    # namespace: openshift-monitoring
+  kind: ServiceAccount
 - apiVersion: rbac.authorization.k8s.io/v1
   metadata:
     name: pyrra-kubernetes
