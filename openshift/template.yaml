@@ -193,7 +193,8 @@ objects:
         containers:
         - args:
           - filesystem
-          - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
+          - --prometheus-url=http://prometheus-app-sre.openshift-customer-monitoring.svc.cluster.local:9090
+          # - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
           image: ${IMAGE_TEST}:${RELEASE_TEST}
           imagePullPolicy: IfNotPresent
           name: pyrra-filesystem
@@ -268,7 +269,8 @@ objects:
         - args:
           - kubernetes
           # - filesystem
-          - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
+          # - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
+          - --prometheus-url=http://prometheus-app-sre.openshift-customer-monitoring.svc.cluster.local:9090
           image: ${IMAGE_TEST}:${RELEASE_TEST}
           name: pyrra-kubernetes
           resources:
