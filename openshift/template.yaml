@@ -95,7 +95,7 @@ objects:
           - args:
               - api
               - --prometheus-url=${PROMETHEUS_URL}
-              - --api-url=http://pyrra-api-pyrra.apps.app-sre-stage-0.k3s7.p1.openshiftapps.com
+              - --api-url=${API_URL}
               - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
             image: ${IMAGE_TEST}:${RELEASE_TEST}
             imagePullPolicy: IfNotPresent
@@ -493,3 +493,5 @@ parameters:
   value: v0.0.2-test
 - name: PROMETHEUS_URL
   value: https://localhost:9090
+- name: API_URL
+  value: localhost
