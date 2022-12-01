@@ -71,8 +71,8 @@ objects:
     labels:
       app.kubernetes.io/name: pyrra-api
     name: pyrra-api
-    # namespace: pyrra
-    namespace: openshift-customer-monitoring
+    namespace: pyrra
+    # namespace: openshift-customer-monitoring
     # namespace: openshift-monitoring
   spec:
     progressDeadlineSeconds: 600
