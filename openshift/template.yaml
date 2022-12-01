@@ -94,10 +94,7 @@ objects:
         containers:
           - args:
               - api
-              # - --prometheus-url=https://prometheus-k8s.openshift-monitoring.svc.cluster.local:9091
-              # - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
-              - --prometheus-url=http://prometheus-app-sre.openshift-customer-monitoring.svc.cluster.local:9090
-              # - --api-url=http://pyrra-kubernetes.openshift-monitoring.svc.cluster.local:9444
+              - --prometheus-url=${PROMETHEUS_URL}
               - --api-url=http://pyrra-api-pyrra.apps.app-sre-stage-0.k3s7.p1.openshiftapps.com
               - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
             image: ${IMAGE_TEST}:${RELEASE_TEST}
@@ -193,8 +190,7 @@ objects:
         containers:
         - args:
           - filesystem
-          - --prometheus-url=http://prometheus-app-sre.openshift-customer-monitoring.svc.cluster.local:9090
-          # - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
+          - --prometheus-url=${PROMETHEUS_URL}
           image: ${IMAGE_TEST}:${RELEASE_TEST}
           imagePullPolicy: IfNotPresent
           name: pyrra-filesystem
@@ -268,9 +264,7 @@ objects:
         containers:
         - args:
           - kubernetes
-          # - filesystem
-          # - --prometheus-url=https://prometheus.app-sre-stage-01.devshift.net
-          - --prometheus-url=http://prometheus-app-sre.openshift-customer-monitoring.svc.cluster.local:9090
+          - --prometheus-url=${PROMETHEUS_URL}
           image: ${IMAGE_TEST}:${RELEASE_TEST}
           name: pyrra-kubernetes
           resources:
@@ -497,3 +491,5 @@ parameters:
   value: v0.4.4
 - name: RELEASE_TEST
   value: v0.0.2-test
+- name: PROMETHEUS_URL
+  value: https://localhost:9090
