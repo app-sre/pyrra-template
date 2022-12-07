@@ -99,11 +99,11 @@ objects:
               - --prometheus-bearer-token-path=$(PROM_TOKEN)
               # - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
           env:
-            - name: PROM_TOKEN
-              valueFrom:
-              secretKeyRef:
-                name: app-sre-stage-01-pyrra-pyrra-kubernetes
-                key: data.token
+          - name: PROM_TOKEN
+            valueFrom:
+            secretKeyRef:
+              name: app-sre-stage-01-pyrra-pyrra-kubernetes
+              key: data.token
             image: ${IMAGE_TEST}:${RELEASE_TEST}
             imagePullPolicy: IfNotPresent
             name: pyrra-api
