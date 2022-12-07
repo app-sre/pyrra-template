@@ -103,7 +103,7 @@ objects:
               valueFrom:
                 secretKeyRef:
                   name: app-sre-stage-01-pyrra-pyrra-kubernetes
-                  key: data.token
+                  key: token
             image: ${IMAGE_TEST}:${RELEASE_TEST}
             imagePullPolicy: IfNotPresent
             name: pyrra-api
