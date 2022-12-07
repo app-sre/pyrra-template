@@ -94,7 +94,7 @@ objects:
         containers:
           - args:
             - api
-            - --prometheus-url=${PROMETHEUS_URL}
+            - --prometheus-url=${PROMETHEUS_URL}/api/v1/alerts
             - --api-url=${API_URL}
             # - --prometheus-bearer-token-path=$(PROM_TOKEN)
             # - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
