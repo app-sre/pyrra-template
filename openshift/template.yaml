@@ -92,12 +92,12 @@ objects:
           app.kubernetes.io/name: pyrra-api
       spec:
         containers:
-        - args:
-          - api
-          - --prometheus-url=${PROMETHEUS_URL}
-          - --api-url=${API_URL}
-          - --prometheus-bearer-token-path=$(PROM_TOKEN)
-          # - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
+          - args:
+            - api
+            - --prometheus-url=${PROMETHEUS_URL}
+            - --api-url=${API_URL}
+            - --prometheus-bearer-token-path=$(PROM_TOKEN)
+            # - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
           env:
           - name: PROM_TOKEN
             valueFrom:
