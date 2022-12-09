@@ -112,6 +112,22 @@ objects:
               - containerPort: 9099
                 name: http
                 protocol: TCP
+            livenessProbe:
+              failureThreshold: 3
+              initialDelaySeconds: 5
+              periodSeconds: 10
+              successThreshold: 1
+                tcpSocket:
+                port: 9099
+              timeoutSeconds: 1
+            readinessProbe:
+              failureThreshold: 3
+              initialDelaySeconds: 5
+              periodSeconds: 10
+              successThreshold: 1
+              tcpSocket:
+                port: 9099
+              timeoutSeconds: 1
             resources:
               limits:
                 cpu: 200m
@@ -280,12 +296,16 @@ objects:
             initialDelaySeconds: 5
             periodSeconds: 10
             successThreshold: 1
+              tcpSocket:
+              port: 9443
             timeoutSeconds: 1
           readinessProbe:
             failureThreshold: 3
             initialDelaySeconds: 5
             periodSeconds: 10
             successThreshold: 1
+            tcpSocket:
+              port: 9443
             timeoutSeconds: 1
           resources:
             limits:
