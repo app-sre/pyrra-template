@@ -132,7 +132,7 @@ objects:
         restartPolicy: Always
         schedulerName: default-scheduler
         securityContext: {}
-        terminationGracePeriodSeconds: 30
+        terminationGracePeriodSeconds: 90
         serviceAccountName: pyrra-kubernetes
         volumes:
           - name: pyrra-sa-token
