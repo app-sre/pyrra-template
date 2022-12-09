@@ -275,6 +275,18 @@ objects:
           # - --prometheus-url=${PROMETHEUS_URL}
           image: ${IMAGE}:${RELEASE}
           name: pyrra-kubernetes
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
           resources:
             limits:
               cpu: 200m
