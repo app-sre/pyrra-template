@@ -160,7 +160,7 @@ objects:
                     name: app-sre-stage-01-pyrra-pyrra-kubernetes
                     items:
                       - key: token
-                        path: /var/run/secrets/tokens
+                        path: pyrra-kubernetes
                 - serviceAccountToken:
                     path: pyrra-kubernetes
           - configMap:
