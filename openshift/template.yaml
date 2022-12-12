@@ -156,7 +156,7 @@ objects:
             #   secretName: app-sre-stage-01-pyrra-pyrra-kubernetes
             projected:
               sources:
-                - secret: pyrra-kubernetes-prom
+                - secret:
                     name: app-sre-stage-01-pyrra-pyrra-kubernetes
                     items:
                       - key: token
