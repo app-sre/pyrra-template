@@ -152,8 +152,8 @@ objects:
         serviceAccountName: pyrra-kubernetes
         volumes:
           - name: pyrra-sa-token
-            # secret:
-            #   secretName: app-sre-stage-01-pyrra-pyrra-kubernetes
+            secret:
+              secretName: app-sre-stage-01-pyrra-pyrra-kubernetes
             projected:
               sources:
                 - serviceAccountToken:
