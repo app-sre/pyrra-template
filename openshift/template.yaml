@@ -141,6 +141,8 @@ objects:
               - mountPath: /var/run/secrets/tokens
                 name: pyrra-sa-token
                 readOnly: true
+              - mountPath: /var/run/secrets/test
+                name: pyrra-prom
               - mountPath: /etc/ssl/certs
                 name: trusted-ca
                 readOnly: true
@@ -151,6 +153,14 @@ objects:
         terminationGracePeriodSeconds: 90
         serviceAccountName: pyrra-kubernetes
         volumes:
+          - name: pyrra-prom
+            projected:
+              sources:
+                - secret:
+                    name: app-sre-stage-01-pyrra-pyrra-kubernetes
+                    items:
+                      - key: token
+                        path: pyrra-prom
           - name: pyrra-sa-token
             # secret:
             #   secretName: app-sre-stage-01-pyrra-pyrra-kubernetes
