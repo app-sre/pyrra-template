@@ -510,9 +510,9 @@ objects:
   kind: Service
 parameters:
 - name: IMAGE
-  value: ghcr.io/pyrra-dev/pyrra
+  value: quay.io/pyrra-dev/pyrra
 - name: IMAGE_TEST
-  value: ghcr.io/suzana-nesic/pyrra
+  value: quay.io/suzana-nesic/pyrra
 - name: RELEASE
   value: v0.4.0
 - name: RELEASE_TEST
