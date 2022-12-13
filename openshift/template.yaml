@@ -216,7 +216,7 @@ objects:
         containers:
         - args:
           - filesystem
-          # - --prometheus-url=${PROMETHEUS_URL}
+          - --prometheus-url=${PROMETHEUS_URL}
           image: ${IMAGE_TEST}:${RELEASE_TEST}
           imagePullPolicy: IfNotPresent
           name: pyrra-filesystem
