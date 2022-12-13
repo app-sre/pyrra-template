@@ -98,7 +98,8 @@ objects:
             - --api-url=${API_URL}
             # - --prometheus-bearer-token=$(PROM_TOKEN)
             # - --prometheus-bearer-token-path=$(PROM_TOKEN)
-            - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
+            # - --prometheus-bearer-token-path=/var/run/secrets/tokens/pyrra-kubernetes
+            - --prometheus-bearer-token-path=/var/run/secrets/test/pyrra-prom
             env:
             - name: PROM_TOKEN
               valueFrom:
