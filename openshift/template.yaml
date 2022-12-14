@@ -420,7 +420,7 @@ objects:
   kind: Service
 parameters:
 - name: IMAGE
-  value: quay.io/pyrra-dev/pyrra
+  value: quay.io/app-sre/pyrra
 - name: IMAGE_TEST
   value: quay.io/suzana-nesic/pyrra
 - name: RELEASE
