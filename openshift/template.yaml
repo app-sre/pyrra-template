@@ -95,6 +95,7 @@ objects:
           - args:
             - api
             - --prometheus-url=${PROMETHEUS_URL}
+            - --prometheus-external-url=${PROM_EXT_URL}
             - --api-url=${API_URL}
             - --prometheus-bearer-token-path=/var/run/secrets/test/pyrra-prom
             env:
@@ -428,6 +429,8 @@ parameters:
 - name: RELEASE_TEST
   value: v0.0.2-test
 - name: PROMETHEUS_URL
+  value: https://localhost:9090
+- name: PROM_EXT_URL
   value: https://localhost:9090
 - name: API_URL
   value: localhost
