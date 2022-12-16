@@ -97,7 +97,7 @@ objects:
             - --prometheus-url=${PROMETHEUS_URL}
             - --prometheus-external-url=${PROM_EXT_URL}
             - --api-url=${API_URL}
-            - --prometheus-bearer-token-path=/var/run/secrets/test/pyrra-prom
+            # - --prometheus-bearer-token-path=/var/run/secrets/test/pyrra-prom
             env:
             - name: PROM_TOKEN
               valueFrom:
