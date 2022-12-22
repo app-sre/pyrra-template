@@ -104,7 +104,7 @@ objects:
                 secretKeyRef:
                   name: app-sre-stage-01-pyrra-pyrra-kubernetes
                   key: token
-            image: ${IMAGE}:${RELEASE}
+            image: ${IMAGE_TEST}:${RELEASE_TEST}
             imagePullPolicy: IfNotPresent
             name: pyrra-api
             ports:
@@ -201,8 +201,8 @@ objects:
         containers:
         - args:
           - kubernetes
-          # - --prometheus-url=${PROMETHEUS_URL}
-          image: ${IMAGE}:${RELEASE}
+          - --prometheus-url=${PROMETHEUS_URL}
+          image: ${IMAGE_TEST}:${RELEASE_TEST}
           name: pyrra-kubernetes
           resources:
             limits:
