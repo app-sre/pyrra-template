@@ -67,6 +67,7 @@ objects:
   kind: Deployment
   metadata:
     annotations:
+      ignore-check.kube-linter.io/unset-cpu-requirements: "no cpu limits"
       service.beta.openshift.io/inject-cabundle: "true"
     labels:
       app.kubernetes.io/name: pyrra-api
@@ -113,10 +114,9 @@ objects:
                 # protocol: TCP
             resources:
               limits:
-                cpu: 200m
                 memory: 100Mi
               requests:
-                cpu: 200m
+                cpu: 10m
                 memory: 100Mi
             terminationMessagePath: /dev/termination-log
             terminationMessagePolicy: File
@@ -182,6 +182,8 @@ objects:
   kind: Service
 - apiVersion: apps/v1
   metadata:
+    annotations:
+      ignore-check.kube-linter.io/unset-cpu-requirements: "no cpu limits"
     name: pyrra-kubernetes
     namespace: pyrra
     # namespace: openshift-customer-monitoring
@@ -206,10 +208,9 @@ objects:
           name: pyrra-kubernetes
           resources:
             limits:
-              cpu: 200m
               memory: 100Mi
             requests:
-              cpu: 200m
+              cpu: 10m
               memory: 100Mi
   kind: Deployment
 
